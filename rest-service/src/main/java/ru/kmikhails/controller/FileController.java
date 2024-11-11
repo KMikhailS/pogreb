@@ -32,7 +32,7 @@ public class FileController {
     public void getDoc(@RequestParam("id") String id, HttpServletResponse response) {
         AppDocument doc = fileService.getDocument(id);
         if (doc == null) {
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.setStatus(HttpServletResponse.SC_NO_CONTENT);
             return;
         }
         response.setContentType(MediaType.parseMediaTypes(doc.getMimeType()).toString());
@@ -53,7 +53,7 @@ public class FileController {
     public void getPhoto(@RequestParam("id") String id, HttpServletResponse response) {
         AppPhoto photo = fileService.getPhoto(id);
         if (photo == null) {
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.setStatus(HttpServletResponse.SC_NO_CONTENT);
             return;
         }
         response.setContentType(MediaType.IMAGE_JPEG.toString());

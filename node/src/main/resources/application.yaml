@@ -8,11 +8,11 @@ spring:
     username: ${RABBIT_USERNAME:userok}
     password: ${RABBIT_PASSWORD:p@ssw0rd}
     queues:
-      text-message-update: ${RABBIT_TEXT_MESSAGE_UPDATE_QUEUE}
-      doc-message-update: ${RABBIT_DOC_MESSAGE_UPDATE_QUEUE}
-      photo-message-update: ${RABBIT_PHOTO_MESSAGE_UPDATE_QUEUE}
-      answer-message: ${RABBIT_ANSWER_MESSAGE_QUEUE}
-      registration-mail: ${RABBIT_REGISTRATION_MAIL_QUEUE}
+      text-message-update: ${RABBIT_TEXT_MESSAGE_UPDATE_QUEUE:text_message_update}
+      doc-message-update: ${RABBIT_DOC_MESSAGE_UPDATE_QUEUE:doc_message_update}
+      photo-message-update: ${RABBIT_PHOTO_MESSAGE_UPDATE_QUEUE:photo_message_update}
+      answer-message: ${RABBIT_ANSWER_MESSAGE_QUEUE:answer_message}
+      registration-mail: ${RABBIT_REGISTRATION_MAIL_QUEUE:registration_mail}
   datasource:
     url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/pogreb}
     username: ${POSTGRES_USERNAME:userok}
@@ -20,13 +20,13 @@ spring:
   jpa:
     generate-ddl: true
 
-token: ${TG_BOT_TOKEN}
+token: ${TG_BOT_TOKEN:7940225203:AAGWE4x4_7_oxvK0TYitMeJg95tClLmjv3A}
 service:
   file_info:
-    uri: ${TG_BOT_FILE_INFO_URI}
+    uri: ${TG_BOT_FILE_INFO_URI:https://api.telegram.org/bot{token}/getFile?file_id={fileId}}
   file_storage:
-    uri: ${TG_BOT_FILE_STORAGE_URI}
+    uri: ${TG_BOT_FILE_STORAGE_URI:https://api.telegram.org/file/bot{token}/{filePath}}
 
 link:
   address: ${TG_BOT_URI:http://localhost:8086}
-salt: ${SALT:test}
+salt: ${SALT:^Cuf8U51HFnpbpPxHh7+4)9bkBYcqfFzDMvsXPTm+9&hsJz(5jNY}

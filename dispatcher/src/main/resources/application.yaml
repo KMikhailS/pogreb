@@ -2,8 +2,8 @@ server:
   port: ${DISPATCHER_PORT:8084}
 
 bot:
-  name: ${TG_BOT_NAME}
-  token: ${TG_BOT_TOKEN}
+  name: ${TG_BOT_NAME:pogreb_test_app_bot}
+  token: ${TG_BOT_TOKEN:7940225203:AAGWE4x4_7_oxvK0TYitMeJg95tClLmjv3A}
 
 spring:
   rabbitmq:
@@ -12,7 +12,7 @@ spring:
     username: ${RABBIT_USERNAME:userok}
     password: ${RABBIT_PASSWORD:p@ssw0rd}
     queues:
-      text-message-update: ${RABBIT_TEXT_MESSAGE_UPDATE_QUEUE}
-      doc-message-update: ${RABBIT_DOC_MESSAGE_UPDATE_QUEUE}
-      photo-message-update: ${RABBIT_PHOTO_MESSAGE_UPDATE_QUEUE}
-      answer-message: ${RABBIT_ANSWER_MESSAGE_QUEUE}
+      text-message-update: ${RABBIT_TEXT_MESSAGE_UPDATE_QUEUE:text_message_update}
+      doc-message-update: ${RABBIT_DOC_MESSAGE_UPDATE_QUEUE:doc_message_update}
+      photo-message-update: ${RABBIT_PHOTO_MESSAGE_UPDATE_QUEUE:photo_message_update}
+      answer-message: ${RABBIT_ANSWER_MESSAGE_QUEUE:answer_message}
